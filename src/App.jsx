@@ -1,26 +1,35 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import About from './components/About'
+import Technology from './components/Technology'
+import Whitepaper from './components/Whitepaper'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen w-full scroll-smooth bg-white text-slate-800">
+      {/* Simple top nav */}
+      <header className="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-white/60">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+          <a href="#home" className="relative font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-cyan-700 to-violet-700">HydraData</a>
+          <nav className="hidden gap-6 text-sm md:flex">
+            <a href="#about" className="transition hover:text-slate-900">About</a>
+            <a href="#technology" className="transition hover:text-slate-900">Technology</a>
+            <a href="#whitepaper" className="transition hover:text-slate-900">Whitepaper</a>
+            <a href="#contact" className="transition hover:text-slate-900">Contact</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <About />
+        <Technology />
+        <Whitepaper />
+        <Contact />
+      </main>
+
+      <Footer />
     </div>
   )
 }
